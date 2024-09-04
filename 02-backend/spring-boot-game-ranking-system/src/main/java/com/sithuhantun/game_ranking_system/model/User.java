@@ -36,19 +36,19 @@ public class User {
     private long trophies;
 
     @ManyToOne(fetch = FetchType.EAGER,
-            cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+            cascade = {CascadeType.PERSIST, //CascadeType.MERGE,
                         CascadeType.REFRESH, CascadeType.DETACH})
     @JoinColumn(name = "clan_id")
     private Clan clan;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+    @ManyToOne(cascade = {CascadeType.PERSIST, //CascadeType.MERGE,
                         CascadeType.REFRESH, CascadeType.DETACH})
     @JoinColumn(name = "clan_rank_id")
     private ClanRank clanRank;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+    @ManyToOne(cascade = {CascadeType.PERSIST, //CascadeType.MERGE,
                             CascadeType.REFRESH, CascadeType.DETACH})
-    //@JoinTable(name = "role_id")
+    @JoinColumn(name = "role_id")
     private Role role;
 
 //    @OneToMany(fetch = FetchType.LAZY,
